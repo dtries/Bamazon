@@ -1,0 +1,33 @@
+{
+  "name": "bamazon",
+  "version": "1.0.0",
+  "description": "Storefront Node App",
+  "main": "bamazonCustomer.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dtries/Bamazon.git"
+  },
+  "keywords": [
+    "node",
+    "mysql",
+    "inquirer",
+    "chalk",
+    "storefront",
+    "database"
+  ],
+  "author": "Dennis Ries",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/dtries/Bamazon/issues"
+  },
+  "homepage": "https://github.com/dtries/Bamazon#readme",
+  "dependencies": {
+    "chalk": "^2.4.2",
+    "dotenv": "^6.2.0",
+    "inquirer": "^6.2.2",
+    "mysql": "^2.16.0"
+  }
+}
