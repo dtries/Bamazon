@@ -13,7 +13,7 @@ VALUES (111,"Player Helmet 1","Player Gear",99.99,23),
        (511,"Player Stick 1","Hockey Sticks",99.99,255),
        (512,"Player Stick 2","Hockey Sticks",299.99,127),
        (611,"Hooded Sweatshirt 1","Apparel",79.99,1002),
-       (612,"Hooded Sweatshirt 2","Apparel",49.00,879);
+       (612,"Hooded Sweatshirt 2","Apparel",49.99,879);
        
 SELECT * FROM products;
        

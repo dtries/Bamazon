@@ -30,11 +30,28 @@ var connection = mysql.createConnection({
 
 function queryAllProducts () {
     //   console.log("Selecting songs from" + connection.database);
-      connection.query("SELECT * FROM products"
-      , function(err,res){
+      connection.query("SELECT * FROM products \G;"
+      , function(err, rows){
         if (err) throw err;
         // Log all results of the SELECT statement
-        console.log(res);
+        
+        createTable(rows);
+
+
+        // console.log(dbResponse);
+        // res.JSON.stringify(res);
         connection.end();
       });
+  }
+
+  var createTable = function(rows) {
+
+    console.log("Item ID" + "\t|\t" + "Product" + "\t|\t" + "Price\t");
+    console.log("-----------------------------------------");
+
+    for (var i = 0; i < rows.length; i++) {
+        var row = rows[i]
+        console.log(row.item_id +"\t|\t "+ row.product_name +"\t|\t " + "$" + row.price);
+        console.log("______________________________________");
+    }
   }
