@@ -45,13 +45,48 @@ function queryAllProducts () {
   }
 
   var createTable = function(rows) {
-
-    console.log("Item ID" + "\t|\t" + "Product" + "\t|\t" + "Price\t");
-    console.log("-----------------------------------------");
+    console.log("\n");
+    console.log(chalk.yellowBright.bgYellowBright("__________________________________________________________________\n"));
+    console.log(chalk.green.bold(" Item ID" + "\t|\t " + "   Product" + "\t\t|\t" + "   Price\t"));
+    console.log(chalk.yellowBright("__________________________________________________________________"));
 
     for (var i = 0; i < rows.length; i++) {
         var row = rows[i]
-        console.log(row.item_id +"\t|\t "+ row.product_name +"\t|\t " + "$" + row.price);
-        console.log("______________________________________");
+        var priceStr = row.price.toString();
+        console.log(" ");
+        if (row.product_name.length < 7) {
+            if (priceStr.length < 6) {
+            console.log(chalk.yellowBright("   " + row.item_id +"\t\t|\t "+ row.product_name +"\t\t\t|\t " + "  $" + row.price));
+            } else if (priceStr.length < 7) {
+                console.log(chalk.yellowBright("   " + row.item_id +"\t\t|\t "+ row.product_name +"\t\t\t|\t " + " $" + row.price));
+            } else {
+                console.log(chalk.yellowBright("   " + row.item_id +"\t\t|\t "+ row.product_name +"\t\t\t|\t " + "$" + row.price));
+            }
+        } else if (row.product_name.length < 15)  {
+            if (priceStr.length < 6) {
+                    console.log(chalk.yellowBright("   " + row.item_id +"\t\t|\t "+ row.product_name +"\t\t|\t " + "  $" + row.price));
+            } else if (priceStr.length< 7) {
+                console.log(chalk.yellowBright("   " + row.item_id +"\t\t|\t "+ row.product_name +"\t\t|\t " + " $" + row.price));
+            } else {
+                console.log(chalk.yellowBright("   " + row.item_id +"\t\t|\t "+ row.product_name +"\t\t|\t " + "$" + row.price));
+            }
+        } else if (row.product_name.length < 23) {
+            if (priceStr.length<6) {
+                console.log(chalk.yellowBright("   " + row.item_id +"\t\t|\t "+ row.product_name +"\t|\t " + "  $" + row.price));
+            }else if (priceStr.length<7) {
+                console.log(chalk.yellowBright("   " + row.item_id +"\t\t|\t "+ row.product_name +"\t|\t " + " $" + row.price));
+            } else {
+                console.log(chalk.yellowBright("   " + row.item_id +"\t\t|\t "+ row.product_name +"\t|\t " + "$" + row.price));
+            }
+ 
+        } else {
+            console.log(chalk.yellowBright("   " + row.item_id +"\t\t|\t "+ row.product_name +"\t|\t " + "$" + row.price));
+        }
+        if (i === rows.length-1) {
+            console.log(" ");
+            console.log(chalk.yellowBright.bgYellowBright("__________________________________________________________________"));
+        } else {
+            console.log(chalk.green("__________________________________________________________________"));
+        }
     }
   }
