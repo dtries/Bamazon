@@ -113,7 +113,7 @@ function incPrompt(row) {
                     updateStock(theItem, amtOrdered, stockOnHand);
                     var customerTotal = res[0].price * amtOrdered;
                     console.log(chalk.green.bold("\n\tYour total is $" + parseFloat(customerTotal).toFixed(2)));
-                    console.log(chalk.yellowBright.bold("\n\tThank you for you(r order!"));
+                    console.log(chalk.yellowBright.bold("\n\tThank you for your order!"));
                     done = 1;
                     if (done = 1) {
                         connection.end();
