@@ -23,8 +23,9 @@ connection.connect(function (err) {
 
 });
 
+
+// --- MySQL functions ----
 function queryAllProducts() {
-    //   console.log("Selecting songs from" + connection.database);
     connection.query("SELECT * FROM products \G;", function (err, rows) {
         if (err) throw err;
         // Log all results of the SELECT statement
@@ -33,6 +34,25 @@ function queryAllProducts() {
     });
 }
 
+function updateStock (theItem,amtOrdered, stockOnHand) {
+    var stockUpdated = stockOnHand - amtOrdered;
+    var query = connection.query(
+        "UPDATE products SET ? WHERE ?", 
+        [
+            {
+                stock_quantity: stockUpdated
+            },
+            {
+                item_id: theItem
+            }
+        ], function (err, stockUpdated, theItem) {
+            if (err) throw err;
+            console.log(chalk.blue("\tTransaction Complete"));
+        }
+    );
+}
+
+// --- Table Creator ------
 var createTable = function (rows) {
     console.log(" ");
     console.log(chalk.yellowBright.bgYellowBright("__________________________________________________________________"));
@@ -120,7 +140,7 @@ function incPrompt(row) {
                     }
                     break;
                 case "not enough":
-                    console.log("Unfortunately, we have only " + res[0].stock_quantity + " of " + res[0].product_name + " in stock currently. Please choose another like product or few of the desired item.");
+                    console.log(chalk.red.bold.italic("  Unfortunately, we have only " + res[0].stock_quantity + " of " + res[0].product_name + " in stock currently. Please choose another like product or fewer of the desired item."));
                     incPrompt();
                     break;
                 default:
@@ -132,17 +152,3 @@ function incPrompt(row) {
     });
 }
 
-function updateStock (theItem,amtOrdered, stockOnHand) {
-    var stockUpdated = stockOnHand - amtOrdered;
-    var query = connection.query(
-        "UPDATE products SET ? WHERE ?",
-        [
-            {
-                stock_quantity: stockUpdated
-            },
-            {
-                item_id: theItem
-            }
-        ]
-    );
-}
