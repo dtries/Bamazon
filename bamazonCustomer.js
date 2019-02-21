@@ -34,9 +34,11 @@ function queryAllProducts() {
     });
 }
 
-function updateStock (theItem,amtOrdered, stockOnHand) {
+function updateStock (theItem,amtOrdered, stockOnHand,itemPrice) {
     var stockUpdated = stockOnHand - amtOrdered;
-    var query = connection.query(
+
+
+      var query = connection.query(
         "UPDATE products SET ? WHERE ?", 
         [
             {
@@ -48,8 +50,7 @@ function updateStock (theItem,amtOrdered, stockOnHand) {
         ], function (err, stockUpdated, theItem) {
             if (err) throw err;
             console.log(chalk.blue("\tTransaction Complete"));
-        }
-    );
+        });
 }
 
 // --- Table Creator ------
@@ -130,7 +131,8 @@ function incPrompt(row) {
                     var theItem = answers.userItem;
                     var amtOrdered = answers.userQuantity;
                     var stockOnHand = res[0].stock_quantity;
-                    updateStock(theItem, amtOrdered, stockOnHand);
+                    var itemPrice = res[0].price;
+                    updateStock(theItem, amtOrdered, stockOnHand,itemPrice);
                     var customerTotal = res[0].price * amtOrdered;
                     console.log(chalk.green.bold("\n\tYour total is $" + parseFloat(customerTotal).toFixed(2)));
                     console.log(chalk.yellowBright.bold("\n\tThank you for your order!"));
