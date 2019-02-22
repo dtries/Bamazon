@@ -6,7 +6,7 @@ Storefront Node Application
 The assignment was to implement Node JS and MySQL Database to create a customer store portal and a store management portal to an online shopping site. The inquirer npm package is used to implement a more sophisticated command line interface and the chalk npm package is used to add color to the appliction. The Bamazon app interfaces with a MySQL database to check and update inventory and prices when an order is placed as well as for management functions such as checking low inventory, adding more inventory of an item, and adding new items.
 
 ## Narrated Video Demonstration
-[YouTube CLI]()
+[YouTube CLI](https://youtu.be/lVPUEm1RGIs)
 
 [YouTube MySQL Database]()
  
