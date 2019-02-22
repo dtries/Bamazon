@@ -35,13 +35,13 @@ The assignment was to implement Node JS and MySQL Database to create a customer 
    * List contains five options:
     1. View products for sale
       * Displays table as in customer view, along with options table.
-     1. View low inventory
+    1. View low inventory
       * Displays only those items for which the stock quantity is less than five units.
-     1. Add to inventory
+    1. Add to inventory
       * Allows the manager to add to the stock quanitity for any item in the database.
-     1. Add new product
+    1. Add new product
       * Allows the manager to add a new product to the data base, stepping through the information required.
-     1. Quit manager view    
+    1. Quit manager view    
                   
 ## Tech Employed
 * Node.js - (see below)
