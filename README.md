@@ -8,7 +8,7 @@ The assignment was to implement Node JS and MySQL Database to create a customer 
 ## Narrated Video Demonstration
 [YouTube CLI](https://youtu.be/lVPUEm1RGIs)
 
-[YouTube MySQL Database]()
+[YouTube MySQL Database](https://youtu.be/D5hkyOqvJQU)
  
 ## Getting Started
 1. Clone [repo](https://github.com/dtries/Bamazon) to your machine. 
