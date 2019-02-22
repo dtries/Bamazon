@@ -30,7 +30,7 @@ The assignment was to implement Node JS and MySQL Database to create a customer 
           * The item purchase prompt is displayed again.
           
 ## Manager Portal
-1. Enter 'node bamazonManager.js'for the manager view portal. 
+1. Enter 'node bamazonManager.js' for the manager view portal. 
 1. Welcome message appears as well as instructions to select desired action from list using arrow keys.
    * List contains five options:
      1. View products for sale
