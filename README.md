@@ -33,7 +33,7 @@ The assignment was to implement Node JS and MySQL Database to create a customer 
 1. Enter 'node bamazonManager.js' for the manager view portal. 
 1. Welcome message appears as well as instructions to select desired action from list using arrow keys.
    * List contains five options:
-        1. View products for sale
+         1. View products for sale
       * Displays table as in customer view, along with options table.
      1. View low inventory
       * Displays only those items for which the stock quantity is less than five units.
